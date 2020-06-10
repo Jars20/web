@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <header>
-
+    
         <input type="text" name="username" placeholder="please input name:">
-
+        
     </header>
     <head>
         <title>banyuan</title>
@@ -24,26 +24,57 @@
                 background-color: rgb(56, 172, 100);
                 white-space: pre-wrap;
             }
+            .list{
+                color: darkkhaki;
+            }
         </style>
     </head>
     <body>
+        <a href="#testa">入口</a>
+        //有序列表
         <ol>
             <li>1</li>
             <li>2</li>
         </ol>
-        <ul>
+        
+        
+        //无序列表
+        <ul class="list">
             <li></li>
             <li></li>
             <li></li>
         </ul>
-        <dl>被描述
-        <dd>
-            描述
-        </dd>
-        <dd>第二次描述</dd>
-        <dd>第三次描述</dd></dl>
-        <dt>被描述</dt>
-        <dd>描述</dd>
+        
+        
+        //自定义列表
+        <a name="testa">
+        <dl>
+            
+            <dd>第一次描述</dd>
+            <dt>被描述</dt>
+            <dd>第二次描述</dd>
+            <dt>被描述</dt>
+            <dd>第三次描述</dd>
+        </dl>
+        </a>
+
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>age</th>
+            </tr>
+            <tr>
+                <th>Isen</th>
+                <th>28</th>
+            </tr>
+            <tr>
+                <th>Jack</th>
+                <th>24</th>
+            </tr>
+            <td>John</td>
+        </table>
+
+        
         <pre class="test-pre">
             测试pre测试pre测试pre测试pre测试pre测试pre测试pre测试pre测试pre测试pre测试pre
         </pre>
@@ -87,7 +118,13 @@
             <option value="3">小猫3</option>
         </select><br>
 
-        <button>打字</button>
+        <button type="button">打字</button>
+
+
+
+
+
+
 
         <p>
             第二个段落
