@@ -1,0 +1,7 @@
+*
+*.idea/
+!*/
+!*.html
+!*.md
+!.gitignore
+!*.emmx
