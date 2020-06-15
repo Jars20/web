@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            遮罩层-伪元素
+        </title>
+
+            <style>
+                .main{
+                    position: relative;
+                    height: 50px;
+                    width: 500px;
+                }
+                img{
+                    height: 50px;
+                    width: 500px;
+                }
+
+
+                img::before{
+                    content: " ";
+                    position:absolute;
+                    left: 0px;
+                    top: -10px;
+                    height: 60px;
+                    width: 100%;
+                    background-color: rgb(230, 230, 230);
+                    border: 2px dotted rgb(200, 200, 200);
+                    border-radius: 5px;
+                }
+
+                img::after{
+                    content: "Broken Image of "attr(src);
+                    position: absolute;
+                    text-align: center;
+                    display: block;
+                    top: 5px;
+                    left: 0px;
+                    width: 100%;
+                    font-size: 16px;
+                    color: rgb(100, 100, 100);
+
+                }
+                
+                /* .before{
+                    position: absolute;
+                    left: 0;
+                    top: -10px;
+                    height: 60px;
+                    width: 100%;
+                    background-color: rgb(230, 230, 230);
+                    border-width: 2px;
+                    border-style: dotted;
+                    border-color:rgb(200, 200, 200);
+                    border-radius: 5px;
+                }
+                .after{
+                    position:absolute;
+                    text-align: center;
+                    display: block;
+                    top: 5px;
+                    left: 0;
+                    width: 100%;
+                    font-size: 16px;
+                    color: rgb(100, 100, 100);
+            
+                } */
+            </style>
+        <body>
+            <div class="main">
+                <!-- <div class="before"></div> -->
+                <img src="img.jpg" alt="此处有一张图片">
+                <!-- <div class="after">Broken image of </div> -->
+            </div>
+        </body>
+    </head>
+</html>

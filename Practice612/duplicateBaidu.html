@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>百度一下，你就知道</title>
+        <style>
+            body{
+                position: relative;
+                background-color: white;
+                min-width: 1250px;
+                min-height: 600px;
+            }
+            html{
+                color: #000;
+            }
+            .header{
+                position: absolute;
+                top: 10px;
+                width: 100%;
+                padding-left: 12.5px;
+            }
+            body{
+                position: relative;
+                height: 100vh;
+
+            }
+            .icon{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+               transform: translateX(-50%) translateY(-232%);
+            }
+            .search{
+                position: absolute;
+                width: 650px;
+                height: 44px;
+                transform: translateX(-30%) translateY(-12px);
+                border-radius: 10px;
+                background-color: #c4c7ce;
+            }
+
+            .leftMenu{
+                text-decoration: none;
+                float: left; 
+                margin-top: 3px;
+                margin-right: 31px;
+                font-size: 13px;            
+            }
+
+            .rightmenu{
+                text-decoration: none;
+                right: 0;
+                float: right;
+                margin-top: 3px;
+                margin-left: 32px;
+                font-size: 13px;
+            }
+
+            a:hover{
+                color: #315efb;
+            }
+            
+            a:active{
+                color: #315efb;
+            }
+
+            .color-t{
+                color: #222;
+            }
+
+            .minibutton{
+                margin-top: 0px;
+                background-color: #4e71f2;
+                font-size: 13px;
+                height: 24px;
+                width: 48px;
+                line-height: 24px;
+                text-align: center;
+                outline: 0;
+                border: 0;
+                border-radius: 6px;
+                padding: 0;
+                color: #fff!important;
+                display: inline-block;
+                margin-right: 29px;
+                padding-top: 1px;
+            }
+
+            .mainbutton{
+                position: absolute;
+                color: black;
+                width: 95px;
+                height: 44px;
+                transform: translateX(555px) ;
+                border-style: none;
+                border-radius:0 9px 9px 0;
+                font-size: 17px;
+                color: white; 
+                background-color:  #4e71f2;
+            }
+
+            .defend{
+                color: #f63051;
+            }
+            
+            button:hover,button:focus{
+                border: none;
+                background-color: #1444f1;
+                outline: none;
+            }
+
+            .inputbox{
+                position: absolute; 
+                height: 38px; 
+                font-size: 22px;
+                width: 460px; 
+                border: none; 
+                transform: translateY(2px) translateX(2.5px); 
+                border-radius: 8px 0 0 8px;
+            }
+
+            .inputbox:focus{
+                transform:translateY(0px);
+                border: 2px solid  #315efb ;    
+                margin: 0;  
+                outline: none;      
+            }
+
+            .map{
+                width: 270px;
+                height: 129px;
+               
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <a href="http://news.baidu.com/" class="leftMenu color-t"> 新闻</a>
+            <a href="https://www.hao123.com/" class="leftMenu color-t">hao123</a>
+            <a href="https://map.baidu.com/@13225221.26,3748918.53,12z" class="leftMenu color-t">地图</a>
+            <a href="https://haokan.baidu.com/?sfrom=baidu-top" class="leftMenu color-t">视频</a>
+            <a href="https://tieba.baidu.com/index.html" class="leftMenu color-t">贴吧</a>
+            <a href="https://xueshu.baidu.com/" class="leftMenu color-t">学术</a>
+            <a href="https://www.baidu.com/more/" class="leftMenu color-t">更多</a>
+
+            <button class="rightmenu minibutton">登录</button>
+            <a href="" class="rightmenu color-t">设置</a>
+            <a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1" class="rightmenu defend" >抗击肺炎</a>
+        </div>
+        <div class="icon">
+            <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度一下你就知道" class="map">
+            <br>    
+            <br>   
+            <div class="search"> 
+                <input type="text" class="inputbox">
+                <!-- <button type="button" style="background-color: cornsilk; transfor; ">拍照</button> -->
+                <!-- <button type="button" style="">语音</button> -->                
+                <button type="button" href="http://www.baidu.com" class="mainbutton">百度一下</button>
+            </div>
+        </div>
+    </body>
+</html>
