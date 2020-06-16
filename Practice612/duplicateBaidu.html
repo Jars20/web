@@ -108,6 +108,33 @@
                 outline: none;
             }
 
+            .icon1{
+                position: absolute;
+                background-color: white;
+                width: 90px;
+                height: 40px;
+                transform: translateY(2px) translateX(464px);
+            }
+            
+            .ipt-rec{
+                background: #fff url(https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/searchbox/nicon-10750f3f7d.png) no-repeat;
+                width: 24px;
+                height: 22px;
+                transform: scale(1.3) translateY(5px);
+            }
+
+            .ipt-pic{
+                background: #fff url(https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/searchbox/nicon-10750f3f7d.png) no-repeat;
+                width: 24px;
+                height: 22px;
+            }
+
+            #button2{
+                background-position: 0 -51px;
+                right: 16px;
+                margin-top: -9px;
+            }
+
             .inputbox{
                 position: absolute; 
                 height: 38px; 
@@ -153,6 +180,9 @@
             <div class="search"> 
                 <input type="text" class="inputbox">
                 <!-- <button type="button" style="background-color: cornsilk; transfor; ">拍照</button> -->
+                <div class="icon1"><span class="ipt-rec" style="display: block;"></span>
+                <span class="ipt-pic" style="display: block; " id="button2"></span>
+                </div>
                 <!-- <button type="button" style="">语音</button> -->                
                 <button type="button" href="http://www.baidu.com" class="mainbutton">百度一下</button>
             </div>
