@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container{
+                position: relative;
+                margin: 100px auto;
+                width: 200px;
+                height: 200px;
+                background-color: darkgoldenrod;
+            }
+            .runner{
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background-color:gold;
+                animation: run 2s 5 forwards alternate;
+            }
+
+            @keyframes run{
+                0%{left: 0px; top: 0px;}
+                33%{left: 170px; top: 0px;}
+                66%{left: 0px; top: 170px;}
+                100%{left: 170px; top: 170px;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="runner"></div>
+        </div>
+
+    </body>
+</html> 
