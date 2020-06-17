@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub-duplicated</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #24292e;
+            background-color: #fff;
+            /* background-color: darkolivegreen; */
+        }
+        .header{
+            flex:auto;
+            z-index: 32;
+            /* padding: 16px; */
+            font-size: 14px;
+            /* line-height: 1.5; */
+            height: 53px;
+            width: 100%;
+            color: hsla(0,0%,100%,.7);
+            background-color: #24292e;   
+           
+        }
+
+
+        /* .------------header-left ---------------*/
+        .header-left{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            
+        }
+        
+        .Header-icon{
+            float: left;
+            position: relative;
+            margin-left: 16px;
+            top: 3px;
+        }
+
+        .Header-link{
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+        }
+        .v-align-middle{
+            overflow: hidden;
+            background-color: initial;
+            filter: invert(100%);
+            height: 32;
+            width: 32;
+        }
+        .input-head{
+            margin-left: 16px;
+            float: left;
+            line-height: 26px;
+            width: 300px;
+            border-radius: 2px;
+            border: none;
+            background-color: rgb(54, 59, 59);
+        }
+        .input-head:focus{
+            
+            background-color: white;
+            border: none; 
+            z-index: 99;   
+        }
+        .inputicon{
+            position: relative;
+            left: -25px;
+            height: 20px;
+            width: 19px;
+            z-index: 32;
+        }
+        .a1{
+            float: left;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;     
+            text-decoration: none;
+            margin-right: 16px;  
+            cursor: pointer;
+             
+        }
+
+        /* -------------------.header-right -----------------*/
+        .header-right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 53px;
+
+            margin-right: 16px;
+            margin-top: 3px;
+            
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+
+        }
+        .octicon-bell{
+            filter: invert(100%); 
+            margin-right: 16px;           
+        }
+        .header-add{
+            filter: invert(100%);
+            margin-right: 16px;
+        }
+        .dropdown-caret{
+            filter: invert(100%);
+            display: inline-block;
+            width: 0;
+            height: 0;
+            vertical-align: middle;
+            content: "";
+            border-top-style: solid;
+            border-top-width: 4px;
+            border-right: 4px solid transparent;
+            border-bottom: 0 solid transparent;
+            border-left: 4px solid transparent;
+        }
+        .users{
+            height: 20px;
+            width: 20px;
+            overflow: hidden;
+        }
+       
+       
+        /* --------------------------- left ----------------------------*/
+        .left{
+            /* flex-direction: column; */
+            width: 25%;
+            max-width: 350px;
+            height: 100vh;
+            float: left;
+            background-color: white;
+            /* position: fixed; */
+            margin-top: 0px;
+        }
+        .dashboard{
+            width: auto;
+            margin-top: 35px;
+            margin-left: 25px;
+            margin-right: 35px;
+            height: 100vh;
+            background-color: white;
+        }
+        .dashboard-repos{
+            /* padding: 3px 10px; */
+            font-size: 12px;
+            line-height: 20px;
+            padding-bottom: 10px;
+            border-bottom: #e1e4e8 solid 1px;
+        }
+        .dashboard-repos-title{
+            float: left;
+            font-size: 14px;
+            margin-bottom: 4px;
+            align-items: center;
+            font-weight: 600;
+            margin-top: 0;
+
+        }
+        .dashboard-repos-buttom{
+            cursor: pointer;
+            float: right;
+            padding: 2px;
+            border-radius: 3px;
+            transform:  translateX(10px) translateY(-5px);
+            margin-right: 0;
+        }
+        .btn-primary {
+            font-weight: 600;
+            color: #fff;
+            background-color: #28a745;
+            background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+            text-shadow: 0 0 black;
+            text-decoration-line: none ;
+            padding-left: 10px;
+            padding-right: 12px;
+            padding-top: 3px;
+            padding-bottom: 5px;
+        }
+        .title-oction1{
+            transform: translateY(4px);
+            filter: invert();
+        }
+        .input-repos{
+            width: 100%;
+            padding: 6px 0px 6px 8px;
+            margin-bottom: 18px;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #24292e;
+            vertical-align: middle;
+            background-color: #fff;
+            outline: none;
+            box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+        }
+        .repositeroy{
+            font-size: 14px;
+            /* margin-top: 8px; */
+            margin-bottom: 8px;
+            display: inline-flex;
+            align-items: baseline;
+
+            color: #0366d6;
+            text-decoration: none;  
+            font-weight: 600;        
+        }
+        .repositeroy-name{
+            transform: translateY(-3px);
+            margin-left: 9px ;
+            color: #0366d6;
+            text-decoration: none;  
+            font-weight: 600;  
+        }
+        .repositeroy-name:hover{
+            text-decoration-line: underline;
+        }
+        .flex-shrink-0{
+           width: 16px;
+           height: 16px;
+            display: inline-flex;
+            filter: invert(50%); 
+            flex-shrink: 0;
+            align-items: baseline;
+       }
+       /* =================ad1====================== */
+       .ad1{
+            height: auto;
+       }
+       .ad1-h1{
+           margin-top: 20px;
+            font-size: 14px;
+            font-weight: 600;
+       }
+       .ad1-buttom{
+            padding: 4px 10px;
+            font-size: 12px;
+            margin-top: 10px;
+            display: inline-block;
+            border-radius: 2px;
+            font-weight: 600;
+            text-align: center;
+            vertical-align:middle;
+            text-decoration: none;  
+            border:#e1e4e8 solid 1px;
+            color: #0366d6;
+            background-color: #fff;
+            background-image: none;
+       }
+       .ad1-buttom:hover{
+            color: #e1e4e8 !important;
+            background-color: #0366d6 !important;
+       }
+        /* ---------------------------------mid-------------------------------------- */
+        .mid{
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+
+
+            height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: rgb(246, 248, 250);
+        }
+        .mainbox{
+            margin-top: 32px;
+            width: auto;
+            padding: 32px ;
+            margin-top: px auto;
+            background-color: #fff;
+            border: 1px solid #d1d5da;
+            border-radius: 4px;
+        }
+        .octicon-light-bulb{
+            margin-top: 32px;
+            transform: translateY(15%);    
+            filter: invert(30%);        
+        }
+
+        .octicon-rss{
+            transform: translateY(12%);
+            filter: invert(30%);
+        }
+
+        .f4 {
+            font-size: 16px;
+        }
+        .mainbox-title{
+            line-height: 1.25;
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        /* ---------------------------------right------------------------------------ */
+        .right{
+            width: 25%;
+            max-width: 350px;
+            height: 100vh;
+            float: right;
+            right: 0px;
+            margin-top: 0px;
+            background-color: rgb(246, 248, 250);            
+        }
+        .recommend{
+            font-weight: 600;
+            margin-top: 35px;
+            margin-bottom: 5px;
+        }
+        .recommender{
+            padding-top:15px ;
+            padding-bottom: 5px;
+            border-bottom:#e1e4e8 solid 1px;
+        }
+        .recommend-title{
+            font-size: 12px;
+            color: #24292e;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .recommend-title:hover{
+            color: #0366d6;
+        }
+        .recommend-text{
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .repo-language-color{
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .programmingLanguage{
+            font-weight: 400;
+            font-size: 12px !important;
+        }
+        .octicon-star{
+            position: relative;
+            top: 3px;
+            margin-left: 12px;
+            filter: invert(50%);
+            
+        }
+        .text-gray{
+            color: rgb(88, 96, 105);
+        }
+        .link-gray{
+            color: rgb(88, 96, 105);
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .link-gray:hover{
+            color: #0366d6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="Header-icon">
+            <a class="Header-link" href="https://github.com/" data-hotkey="g d" aria-label="Homepage " data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+            </div>
+        
+            <input type="text" placeholder="  Search or jump to..." class="input-head">
+            <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="inputicon">
+
+            <a href="https://github.com/pulls" class="a1">Pull requests</a>
+            <a href="https://github.com/issues" class="a1">Issues</a>
+            <a href="https://github.com/marketplace" class="a1">Marketplace</a>
+            <a href="https://github.com/explore" class="a1">Explore</a>
+        </div>
+        <div class="header-right">
+            <span class="dropdown-caret" style="filter: invert(0%); margin-left: 7px;margin-top: 2px;"></span>                
+            <div class="users">
+                <img alt="@Jars20" style="overflow: hidden; width: 20px; height: 20px;" src="https://avatars0.githubusercontent.com/u/62796011?s=60&amp;v=4" class="avatar-user " >
+            </div>
+            <div class="header-add">
+                <svg class="octicon octicon-plus" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2a.75.75 0 01.75.75v4.5h4.5a.75.75 0 010 1.5h-4.5v4.5a.75.75 0 01-1.5 0v-4.5h-4.5a.75.75 0 010-1.5h4.5v-4.5A.75.75 0 018 2z"></path></svg>
+                <span class="dropdown-caret"></span>                
+            </div>
+            <div class="octicon-bell">
+                <a href="https://github.com/notifications" ><svg class="octicon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z"></path><path fill-rule="evenodd" d="M8 1.5A3.5 3.5 0 004.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.018.018 0 00-.003.01l.001.006c0 .002.002.004.004.006a.017.017 0 00.006.004l.007.001h10.964l.007-.001a.016.016 0 00.006-.004.016.016 0 00.004-.006l.001-.007a.017.017 0 00-.003-.01l-1.703-2.554a1.75 1.75 0 01-.294-.97V5A3.5 3.5 0 008 1.5zM3 5a5 5 0 0110 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.518 1.518 0 0113.482 13H2.518a1.518 1.518 0 01-1.263-2.36l1.703-2.554A.25.25 0 003 7.947V5z"></path></svg></a>
+            </div>
+       
+        </div>
+    </div>
+    <div class="left">
+        <div class="dashboard">
+            <div class="dashboard-repos">
+                <div class="dashboard-repos-title">Repositories</div>
+                <a class="dashboard-repos-buttom btn-primary" href="https://github.com/new"><svg class="title-oction1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg> New</a>
+                <input type="text" placeholder="Find a repository..." class="input-repos" >
+                <div class="repositeroy">
+                    <svg aria-label="Repository" class="octicon octicon-repo flex-shrink-0" viewBox="0 0 16 16" version="1.1" width="16" height="16" role="img"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+                    <a href="https://github.com/Jars20/javaSE" class="repositeroy-name">Jars20/javaSE</a>
+                </div>
+                <br>
+                <div class="repositeroy">
+                    <svg aria-label="Repository" class="octicon octicon-repo flex-shrink-0" viewBox="0 0 16 16" version="1.1" width="16" height="16" role="img"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+                    <a href="https://github.com/Jars20/web" class="repositeroy-name">Jars20/web</a>
+                </div>
+                <br>
+                <div class="repositeroy">
+                    <svg aria-label="Repository" class="octicon octicon-repo flex-shrink-0" viewBox="0 0 16 16" version="1.1" width="16" height="16" role="img"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+                    <a href="https://github.com/Jars20/banyuan" class="repositeroy-name">Jars20/banyuan</a>
+                </div>
+            </div>
+            <div></div>
+            <div class="ad1">
+                <div class="ad1-h1">Working with a team?</div>
+                <div class="ad1-text">GitHub is built for collaboration. Set up an organization to improve the way your team works together, and get access to more features.</div>
+                <a class="ad1-buttom" data-ga-click="Dashboard, click, text: Create an organization;" href="/account/organizations/new">Create an organization</a>
+            </div>
+        </div> 
+    </div>
+    <div class="right">
+        <div class="recommend">Explore repositories</div>
+        <div class="recommender"><a class="recommend-title" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;DISCOVER_REPOSITORIES&quot;,&quot;target&quot;:&quot;REPOSITORY&quot;,&quot;record_id&quot;:187353975,&quot;dashboard_context&quot;:&quot;user&quot;,&quot;dashboard_version&quot;:2,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/&quot;}}" data-hydro-click-hmac="5dc2aab17f2581dbc0c173c6de6fc39648397095e54ac58809e0423093e50e04" data-ga-click="Explore, go to repository, location:dashboard;context:user" href="/hcsp/create-a-psvm-method-and-print">hcsp/create-a-psvm-method-and-print</a>
+            <p class="text-gray recommend-text" itemprop="description">
+                Java basic practice for beginners.</p>
+                <span class="mr-2 f6 text-gray text-normal">
+                    <span class="">
+                    <span class="repo-language-color" style="background-color: #89e051"></span>
+                    <span class="programmingLanguage">Shell</span>
+                    <svg aria-label="star" class="octicon-star" viewBox="0 0 16 16" version="1.1" width="16" height="16" role="img"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>1
+                    </span>
+                  </span>
+        </div>
+        <div class="recommender">
+            <a class="recommend-title" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;DISCOVER_REPOSITORIES&quot;,&quot;target&quot;:&quot;REPOSITORY&quot;,&quot;record_id&quot;:187353975,&quot;dashboard_context&quot;:&quot;user&quot;,&quot;dashboard_version&quot;:2,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/&quot;}}" data-hydro-click-hmac="5dc2aab17f2581dbc0c173c6de6fc39648397095e54ac58809e0423093e50e04" data-ga-click="Explore, go to repository, location:dashboard;context:user" href="/hcsp/create-a-psvm-method-and-print">kubernetes/website</a>
+            <p class="text-gray recommend-text" itemprop="description">
+                Kubernetes website and documentation repo:</p>
+                <span class="mr-2 f6 text-gray text-normal">
+                    <span class="">
+                    <span class="repo-language-color" style="background-color: #e34c26"></span>
+                    <span class="programmingLanguage">HTML</span>
+                    <svg aria-label="star" class="octicon-star" viewBox="0 0 16 16" version="1.1" width="16" height="16" role="img"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>2k
+                    </span>
+                  </span>
+        </div>
+        <div class="recommender" style="border: none;">
+            <a class="recommend-title" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;DISCOVER_REPOSITORIES&quot;,&quot;target&quot;:&quot;REPOSITORY&quot;,&quot;record_id&quot;:187353975,&quot;dashboard_context&quot;:&quot;user&quot;,&quot;dashboard_version&quot;:2,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/&quot;}}" data-hydro-click-hmac="5dc2aab17f2581dbc0c173c6de6fc39648397095e54ac58809e0423093e50e04" data-ga-click="Explore, go to repository, location:dashboard;context:user" href="/hcsp/create-a-psvm-method-and-print">ryansolid/solid</a>
+            <p class="text-gray recommend-text" itemprop="description">
+                
+            A declarative, efficient, and flexible JavaScript library for building user interfaces.
+        </p>
+                <span class="mr-2 f6 text-gray text-normal">
+                    <span class="">
+                    <span class="repo-language-color" style="background-color: #2b7489"></span>
+                    <span class="programmingLanguage">TypeScript</span>
+                    <svg aria-label="star" class="octicon-star" viewBox="0 0 16 16" version="1.1" width="16" height="16" role="img"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>3.3k
+                    </span>
+                  </span>
+        </div>
+        <a class="d-block link-gray no-underline f6 mb-3" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;DISCOVER_REPOSITORIES&quot;,&quot;target&quot;:&quot;EXPLORE&quot;,&quot;dashboard_context&quot;:&quot;user&quot;,&quot;dashboard_version&quot;:2,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/&quot;}}" data-hydro-click-hmac="be2756220c533368abfdc9e95aaac808006f5e3a869c45ad3644a60b2f5d12dc" data-ga-click="Explore, go to Discover, location:dashboard;context:user" href="/explore">
+            Explore more →
+        </a>
+    </div>
+
+
+
+    <div class="mid">
+        <div class="mainbox">
+            <h2 class="mainbox-title">Discover interesting projects and people to populate your personal news feed.</h2>
+            <p class="f4">
+                Your news feed helps you keep up with recent activity on repositories you
+                <a data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-watch,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;WATCH&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="5ad41b49485af2f8e260b3d79cb4ced6f9f5f576bbe014a11f523b7755d569bc" href="/trending">watch</a>
+                and people you
+                <a data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-follow,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;FOLLOW&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="d1f9ea6b65107fc0501adb7d7dc63baf2abf1ba1b7db847a3f09c7429339d4bb" href="/trending/developers">follow</a>.
+              </p>
+              <br>
+              <a class="ad1-buttom" style=" font-size:14px " data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-explore,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;EXPLORE&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="c2f8cac8b586351325aff05dc5caf0a2e448504a1e7e79f70e4d2f40bd6b0986" href="/explore">Explore GitHub</a>
+        </div>  
+        <div class="text-gray">
+            <svg class="octicon octicon-light-bulb text-gray" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 01-1.484.211c-.04-.282-.163-.547-.37-.847a8.695 8.695 0 00-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.75.75 0 01-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75zM6 15.25a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zM5.75 12a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z"></path></svg>
+            <strong>ProTip!</strong>
+            The feed shows you events from people you 
+            <a href="/Jars20/following">follow</a>
+            and repositories you 
+            <a href="/watching">watch</a>
+            .
+            <br>
+            <a class="f6 link-gray mb-2 mt-2 d-inline-block" href="/Jars20.private.atom?token=AO7DB2YSORU2NI4E7QDETHV46XG5S" data-ga-click="Dashboard, click, News feed atom/RSSlink- context:user"><svg class="octicon octicon-rss mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.002 2.725a.75.75 0 01.797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 11-1.497.098 10.502 10.502 0 00-9.776-9.776.75.75 0 01-.7-.798zM2 13a1 1 0 112 0 1 1 0 01-2 0zm.84-5.95a.75.75 0 00-.179 1.489c2.509.3 4.5 2.291 4.8 4.8a.75.75 0 101.49-.178A7.003 7.003 0 002.838 7.05z"></path></svg> Subscribe to your news feed</a>
+        </div>  
+    </div>
+</body>
+</html>
