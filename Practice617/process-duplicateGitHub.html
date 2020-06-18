@@ -14,7 +14,7 @@
             font-size: 14px;
             line-height: 1.5;
             color: #24292e;
-            background-color: #fff;
+            background-color: rgb(246, 248, 250);
             /* background-color: darkolivegreen; */
         }
         .header{
@@ -28,6 +28,12 @@
             color: hsla(0,0%,100%,.7);
             background-color: #24292e;   
            
+        }
+        .header svg:hover{
+            filter: invert(50%);
+        }
+        .header a:hover{
+            color:#d1d5da;
         }
 
 
@@ -143,6 +149,7 @@
             float: left;
             background-color: white;
             margin-top: 0px;
+            overflow: hidden;
         }
         .dashboard{
             width: auto;
@@ -186,6 +193,12 @@
             padding-right: 12px;
             padding-top: 3px;
             padding-bottom: 5px;
+        }
+        .btn-primary:hover{
+            box-shadow: #24292e 0px 0px 0.5px 0.5px;
+            /* background-image: linear-gradient(-180deg,#28a745,#34d058 90%); */
+            background-color:#28a745;
+
         }
         .title-oction1{
             transform: translateY(4px);
@@ -266,9 +279,10 @@
         .mid{
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             padding: 0 16px;
 
-
+            width: auto;
             height: 100vh;
             max-width: 1400px;
             margin: 0 auto;
@@ -303,12 +317,19 @@
             font-size: 24px;
             margin-bottom: 8px;
         }
+        .mid .ad1-buttom{
+            margin-top: 15px;
+            padding: 6px 12px;
+        }
         .mid a{
             color: #0366d6;
             text-decoration: none;  
             font-weight: 400
         }
-         .mid .link-gray{
+        .mid .underline:hover{
+            text-decoration: underline;
+        }
+        .mid .link-gray{
             color: rgb(88, 96, 105);
             text-decoration: none;
             font-size: 12px;
@@ -317,7 +338,50 @@
             color: #0366d6;
             text-decoration: underline;
          }
+         .mid .ad1-buttom:hover{
+             text-decoration: none;
+         }
+         .mid-tail{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0px;
+            bottom: 0px;
 
+         }
+         
+         
+        .Home-page{
+            color:rgb(200, 200, 200);
+            fill: currentColor;
+         }
+        .Home-page:hover{
+            color:rgb(150, 150, 150);
+            text-decoration: none ;
+            
+        }
+        .Home-page span{
+            display: inline-block;
+            margin: 5px;
+            transform: translateY(-8px);
+        }
+       
+
+         .tail-col{
+             height: 110px;
+         }
+         .tail-col-nth{
+             width: 15%;
+             font-size: 12px;
+         }
+         .tail-col-1st{
+            width:40%;
+            background-color: rgb(246, 248, 250);
+            font-size: 12px;
+         }
+         .list-style-none{
+             list-style-type: none;
+         }
         /* ---------------------------------right------------------------------------ */
         .right{
             width: 25%;
@@ -381,6 +445,7 @@
         }
         .link-gray:hover{
             color: #0366d6;
+            
         }
 
     </style>
@@ -493,28 +558,77 @@
 
 
     <div class="mid">
-        <div class="mainbox">
-            <h2 class="mainbox-title">Discover interesting projects and people to populate your personal news feed.</h2>
-            <p class="f4">
-                Your news feed helps you keep up with recent activity on repositories you
-                <a data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-watch,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;WATCH&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="5ad41b49485af2f8e260b3d79cb4ced6f9f5f576bbe014a11f523b7755d569bc" href="/trending">watch</a>
-                and people you
-                <a data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-follow,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;FOLLOW&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="d1f9ea6b65107fc0501adb7d7dc63baf2abf1ba1b7db847a3f09c7429339d4bb" href="/trending/developers">follow</a>.
-              </p>
-              <br>
-              <a class="ad1-buttom" style=" font-size:14px " data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-explore,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;EXPLORE&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="c2f8cac8b586351325aff05dc5caf0a2e448504a1e7e79f70e4d2f40bd6b0986" href="/explore">Explore GitHub</a>
-        </div>  
-        <div class="text-gray">
-            <svg class="octicon octicon-light-bulb text-gray" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 01-1.484.211c-.04-.282-.163-.547-.37-.847a8.695 8.695 0 00-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.75.75 0 01-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75zM6 15.25a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zM5.75 12a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z"></path></svg>
-            <strong>ProTip!</strong>
-            The feed shows you events from people you 
-            <a href="/Jars20/following">follow</a>
-            and repositories you 
-            <a href="/watching">watch</a>
-            .
-            <br>
-            <a class="f6 link-gray mb-2 mt-2 d-inline-block" href="/Jars20.private.atom?token=AO7DB2YSORU2NI4E7QDETHV46XG5S" data-ga-click="Dashboard, click, News feed atom/RSSlink- context:user"><svg class="octicon octicon-rss mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.002 2.725a.75.75 0 01.797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 11-1.497.098 10.502 10.502 0 00-9.776-9.776.75.75 0 01-.7-.798zM2 13a1 1 0 112 0 1 1 0 01-2 0zm.84-5.95a.75.75 0 00-.179 1.489c2.509.3 4.5 2.291 4.8 4.8a.75.75 0 101.49-.178A7.003 7.003 0 002.838 7.05z"></path></svg> Subscribe to your news feed</a>
-        </div>  
+        <div class="main">
+            <div class="mainbox">
+                <h2 class="mainbox-title">Discover interesting projects and people to populate your personal news feed.</h2>
+                <p class="f4">
+                    Your news feed helps you keep up with recent activity on repositories you
+                    <a class="underline" data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-watch,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;WATCH&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="5ad41b49485af2f8e260b3d79cb4ced6f9f5f576bbe014a11f523b7755d569bc" href="/trending">watch</a>
+                    and people you
+                    <a class="underline" data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-follow,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;FOLLOW&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="d1f9ea6b65107fc0501adb7d7dc63baf2abf1ba1b7db847a3f09c7429339d4bb" href="/trending/developers">follow</a>.
+                </p>
+                <a class="ad1-buttom" style=" font-size:14px; font-weight: 600;" data-ga-click="activity_feed, currently_following_users_count:0;events_shown:false;banner_shown:true;banner_dismissable:true;page_type:activity" data-octo-click="activity_feed" data-octo-dimensions="actor_id:62796011,action:banner-click-explore,currently_following_users_count:0,events_shown:false,banner_shown:true,banner_dismissable:true,page_type:activity" data-hydro-click="{&quot;event_type&quot;:&quot;dashboard.click&quot;,&quot;payload&quot;:{&quot;event_context&quot;:&quot;EMPTY_FEED&quot;,&quot;dashboard_context&quot;:&quot;nilclass&quot;,&quot;dashboard_version&quot;:2,&quot;target&quot;:&quot;EXPLORE&quot;,&quot;user_id&quot;:62796011,&quot;originating_url&quot;:&quot;https://github.com/dashboard-feed&quot;}}" data-hydro-click-hmac="c2f8cac8b586351325aff05dc5caf0a2e448504a1e7e79f70e4d2f40bd6b0986" href="/explore">Explore GitHub</a>
+            </div>  
+            <div class="text-gray"  style="font-size: 12px;">
+                <svg class="octicon octicon-light-bulb text-gray" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 01-1.484.211c-.04-.282-.163-.547-.37-.847a8.695 8.695 0 00-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.75.75 0 01-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75zM6 15.25a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zM5.75 12a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z"></path></svg>
+                <strong>ProTip!</strong>
+                The feed shows you events from people you 
+                <a class="underline" href="/Jars20/following">follow</a>
+                and repositories you 
+                <a class="underline" href="/watching">watch</a>
+                .
+                <br>
+                <a class="underline" class="f6 link-gray mb-2 mt-2 d-inline-block" href="/Jars20.private.atom?token=AO7DB2YSORU2NI4E7QDETHV46XG5S" data-ga-click="Dashboard, click, News feed atom/RSSlink- context:user"><svg class="octicon octicon-rss mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.002 2.725a.75.75 0 01.797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 11-1.497.098 10.502 10.502 0 00-9.776-9.776.75.75 0 01-.7-.798zM2 13a1 1 0 112 0 1 1 0 01-2 0zm.84-5.95a.75.75 0 00-.179 1.489c2.509.3 4.5 2.291 4.8 4.8a.75.75 0 101.49-.178A7.003 7.003 0 002.838 7.05z"></path></svg> Subscribe to your news feed</a>
+            </div> 
+        </div> 
+        <div class="mid-tail">
+            <div class="tail-col tail-col-1st">
+                <a title="Home page" class=" d-lg-flex footer-octicon footer-octicon no-underline" href="https://github.com" style="display: flex;">
+                    <div class="Home-page">
+                        <svg height="24" class="" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path  fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                        <span class="f6 text-gray" >
+                            © 2020 GitHub, Inc.
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <div class="tail-col-nth">
+                <ul class="col-4 col-sm-4 col-lg-4 col-xl-3 list-style-none f6 text-gray pl-lg-4">
+                    <li class="mb-1"><a class="link-gray" href="https://github.blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+                    <li class="mb-1"><a class="link-gray" data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+                    <li class="mb-1"><a class="link-gray" href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+                    <li class="mb-1"><a class="link-gray" data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact</a></li>
+                    <li class="mb-1"><a href="/pricing" data-ga-click="Footer, go to Pricing, text:Pricing" class="link-gray">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="tail-col-nth">
+                <ul class="col-4 col-sm-4 col-lg-4 col-xl-3 list-style-none f6 text-gray pl-lg-4">
+                    <li class="mb-1"><a class="link-gray" href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+                    <li class="mb-1"><a class="link-gray" href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+              
+                      <li class="mb-1">
+                        <a class="link-gray" href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a>
+                      </li>
+                      <li class="mb-1">
+                        <a class="link-gray" href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a>
+                      </li>
+                  </ul>
+            </div>
+            <div class="tail-col-nth">
+                <ul class="col-4 col-sm-4 col-lg-4 col-xl-3 list-style-none f6 text-gray pl-lg-4">
+                    <li class="mb-1">
+                      <a class="link-gray" data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="link-gray" data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="link-gray" data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a>
+                    </li>
+                  </ul>
+            </div>
+
+        </div>
     </div>
 </body>
 </html>
