@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>标题</h1>
+    <p id="demo">段落</p>
+    <button type="button" onclick="myFunction()">cilck here</button>
+    <script>
+        // function myFunction(){
+        //     document.getElementById("demo").innerHTML="起飞飞飞飞飞飞飞飞飞飞飞飞飞";
+        // }
+        // while(true){
+        //     window.alert("the answer is 42");
+
+        // }
+        // function myFunction()
+        // {
+        //     document.write(Date());
+        // }
+        /* ajax */
+    function ajax(){
+
+    $.ajax({
+        type : "POST",
+        // async : true, 
+        url : 'http://192.168.10.73:10001/banyuan/ajax',
+        data : {status:'time'},
+        success : function(result) {
+
+            
+            $('.main').html("<span>成功！</span>");
+        },
+        error : function(error){
+            
+            $('.main').html("<span>失败！</span>");
+        }
+        });
+    }
+
+
+    function test(){
+
+    console.log(1);
+    }
+    </script>
+</body>
+</html>

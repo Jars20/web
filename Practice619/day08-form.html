@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlineForm</title>
+    <script src="./jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div>
+        
+            <label class="name-input">
+                <h2>username:</h2>
+                <input type="text" id="mm-uid"  placeholder="Name"/>
+            </label>
+            <label class="password-input">
+                <h2>password:</h2>
+                <input  type="password" id="mm-pwd"  placeholder="password" />
+            </label>
+       
+            <br>
+            <br>
+            <input type="button" value="send" class="button" id="submitButton">
+    </div>
+    <script>
+        function checkName(nameInput) {
+            const nametest = /[\w\-]{4,14}/;
+            return nametest.test(nameInput);
+        }
+        function checkPassword(keyInpput) {
+            const keytest = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^\w])/
+            return keytest.test(keyInpput);
+        }
+     
+
+
+        $('#submitButton').click(function(){
+
+            if(!checkName(username)){
+                let div = $("<div class='input-warning'>4到16位，字母，数字，下划线，减号</div>")
+    			$('.name-input').append(div);
+
+                return;
+            }
+
+
+            if(!checkPassword($('#password').val())){
+
+                let div = $("<div class='input-warning'>至少6位，至少1个大写字母，1个小写字母，1个数字，1个特殊符号</div>")
+                $('.password-input').append(div);
+
+                return; 
+            }
+            $.ajax({
+                type:"POST",
+                async:true,
+                url:'http:/192.168.10.73:10001/banyuan/form/action',
+                data:{
+                    username:$('#mm-uid').val(),
+                    password:$('#mm-pwd').val()
+                },
+                success : function(result){
+                    alert(result.status);
+                },
+                error : function(error){
+                    alert('Failed!');
+                }
+            });
+        })
+    </script>    
+</body>
+</html>
